@@ -6,7 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login extends JFrame implements ActionListener {
-
+    JButton login,clear,signup;
+    JTextField cardTextfield;
+    JPasswordField pinTextfield;
     Login(){
         setTitle("AUTOMATED TELLER MACHINE");
         ImageIcon i1= new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));
@@ -25,7 +27,7 @@ public class Login extends JFrame implements ActionListener {
         cardno.setFont(new Font("Raleway",Font.BOLD,28));
         cardno.setBounds(120,150,150,30);
         add(cardno);
-        JTextField cardTextfield= new JTextField();
+        cardTextfield= new JTextField();
         cardTextfield.setBounds(300,150,230,30);
         add(cardTextfield);
 
@@ -33,25 +35,26 @@ public class Login extends JFrame implements ActionListener {
         pin.setFont(new Font("Raleway",Font.BOLD,28));
         pin.setBounds(120,220,250,30);
         add(pin);
-        JTextField pinTextfield= new JTextField();
+
+        pinTextfield= new JPasswordField();
         pinTextfield.setBounds(300,220,230,30);
         add(pinTextfield);
 
-        JButton login = new JButton("SIGN IN");
+        login = new JButton("SIGN IN");
         login.setBounds(300,300,100,30);
         add(login);
         login.setBackground(Color.black);
         login.setForeground(Color.white);
         login.addActionListener(this);
 
-        JButton clear = new JButton("CLEAR");
+        clear = new JButton("CLEAR");
         clear.setBounds(430,300,100,30);
         add(clear);
         clear.setBackground(Color.black);
         clear.setForeground(Color.white);
         clear.addActionListener(this);
 
-        JButton signup = new JButton("SIGN UP");
+        signup = new JButton("SIGN UP");
         signup.setBounds(300,350,230,30);
         add(signup);
         signup.setBackground(Color.black);
@@ -69,6 +72,13 @@ public class Login extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource()==clear){
+            cardTextfield.setText("");
+            pinTextfield.setText("");
+        } else if (e.getSource()==login) {
+            
+        } else if (e.getSource()==signup) {
+            
+        }
     }
 }
